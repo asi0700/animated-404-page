@@ -1,0 +1,145 @@
+body {
+    background-color: rgb(0, 0, 0);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 20px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/*.load-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 1000;
+    animation: fadeOut 1s ease-in forwards;
+    animation-delay: 0.5s;
+}*/
+
+.container {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.container > * {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+
+.img-container {
+    animation-delay: 0.8s;
+    border-radius: 10px;
+    padding: 10px;
+    flex: 1;
+}
+
+.img-container img {
+    width: 125%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.info {
+    width: auto;
+    height: 600px;
+    background-color: rgb(25, 26, 26);
+    border-radius: 18px;
+    font-size: 36px;
+    color: rgb(198, 198, 198);
+    flex: 1;
+    animation: slideLeft 0.8s ease-out forwards;
+    animation-delay: 1s;
+}
+
+h1 {
+    margin-left: 25px;
+    margin-right: 90px;
+    animation-delay: 1.2s;
+}
+
+p {
+    margin-left: 25px;
+    font-size: 19px;
+    color: rgb(148, 158, 158);
+    animation-delay: 1.4s;
+}
+
+button {
+    background-color: #a5aaa5;
+    color: rgb(16, 15, 15);
+    border: none;
+    padding: 12px 24px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 40%;
+    margin-left: 25px;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: transform 0.3s ease-out;
+    
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .img-container img {
+        width: 100%;
+    }
+    
+    button {
+        margin-top: 20px;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
